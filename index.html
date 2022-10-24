@@ -4,8 +4,16 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Rock, Paper, Scissors!</title>
+		<link rel="stylesheet" href="style.css"/>
 	</head>
 	<body>
 		<script src="scripts.js"></script>
+		<div class="buttons">
+			<div class="button" id="button-rock" onclick="playRound('Rock')">rock</div>
+			<div class="button" id="button-paper" onclick="playRound('Paper')">paper</div>
+			<div class="button" id="button-scissor" onclick="playRound('Scissors')">scissors</div>
+		</div>
+		<div id="result"></div>
+		<div id="scoreboard"></div>
 	</body>
 </html>
