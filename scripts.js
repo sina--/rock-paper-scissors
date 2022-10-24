@@ -9,7 +9,9 @@ function getComputerChoice() {
 
 function playRound(playerSelection,computerSelection) {
 	let result = document.getElementById('result');
-	let scoreboard = document.getElementById('scoreboard');
+	let playerCounter = document. getElementById('playerCounter');
+	let computerCounter = document. getElementById('computerCounter');
+
 	computerSelection = getComputerChoice();
 	playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
 	
@@ -20,6 +22,7 @@ function playRound(playerSelection,computerSelection) {
 	) {
 		result.textContent = "You win! " + playerSelection + " beats " + computerSelection + "!";
 		playerScore++;
+		playerCounter.textContent = playerScore;
 	} else if (
 		(playerSelection === "Rock" && computerSelection === "Rock") ||
 		(playerSelection === "Paper" && computerSelection === "Paper") ||
@@ -29,6 +32,6 @@ function playRound(playerSelection,computerSelection) {
 	} else {
 		result.textContent = "You lose! " + playerSelection + " loses to " + computerSelection + "!";
 		computerScore++;
+		computerCounter.textContent = computerScore;
 	}
-	scoreboard.textContent = "Player score = " + playerScore + " Computer Score = " + computerScore;
 }

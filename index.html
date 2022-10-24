@@ -5,15 +5,31 @@
 		<meta charset="UTF-8">
 		<title>Rock, Paper, Scissors!</title>
 		<link rel="stylesheet" href="style.css"/>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<script src="scripts.js"></script>
-		<div class="buttons">
-			<div class="button" id="button-rock" onclick="playRound('Rock')">rock</div>
-			<div class="button" id="button-paper" onclick="playRound('Paper')">paper</div>
-			<div class="button" id="button-scissor" onclick="playRound('Scissors')">scissors</div>
-		</div>
-		<div id="result"></div>
-		<div id="scoreboard"></div>
+    <div class="header">
+      <h1>Rock. Paper. Scissors.</h1>
+    </div>
+    <div class="board">
+      <div id="result">Make your selection:</div>
+      <div class="buttons">
+        <div class="button" id="button-rock" onclick="playRound('Rock')">Rock</div>
+        <div class="button" id="button-paper" onclick="playRound('Paper')">Paper</div>
+        <div class="button" id="button-scissor" onclick="playRound('Scissors')">Scissors</div>
+      </div>
+      <div class="scorebox">
+        <div class="scorecard">
+          <h2>Player Score:</h2>
+          <div class="counter" id="playerCounter">/</div>
+        </div>
+        <div class="scorecard">
+          <h2>Computer Score:</h2>
+          <div class="counter" id="computerCounter">/</div>
+        </div>
+    </div>
 	</body>
 </html>
