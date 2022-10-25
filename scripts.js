@@ -35,3 +35,11 @@ function playRound(playerSelection,computerSelection) {
 		computerCounter.textContent = computerScore;
 	}
 }
+
+function resetBoard() {
+    playerScore = 0;
+    computerScore =0;
+    result.textContent = "Make your selection:";
+    playerCounter.textContent = "/";
+    computerCounter.textContent = "/";
+}
