@@ -1,6 +1,7 @@
 const hands = ["Rock", "Paper", "Scissors"];
 let playerScore = 0;
 let computerScore = 0;
+let gameOver = false;
 
 function getComputerChoice() {
 	const choice = Math.floor(Math.random() * hands.length);
@@ -11,9 +12,10 @@ function playRound(playerSelection,computerSelection) {
 	let result = document.getElementById('result');
 	let playerCounter = document. getElementById('playerCounter');
 	let computerCounter = document. getElementById('computerCounter');
+    let winnerDeclaration = document.getElementById('winnerDeclaration');
+
 
 	computerSelection = getComputerChoice();
-	playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
 	
 	if (
 		(playerSelection === "Rock" && computerSelection === "Scissors") ||
@@ -34,12 +36,23 @@ function playRound(playerSelection,computerSelection) {
 		computerScore++;
 		computerCounter.textContent = computerScore;
 	}
+	if (playerScore === 5 && gameOver === false) {
+		winnerDeclaration.textContent = "Game Over! You win!";
+		gameOver = true;
+	}	
+	if (computerScore === 5 && gameOver === false) {
+		winnerDeclaration.textContent = "Game Over! You lost!";
+		gameOver = true;
+	}
 }
 
 function resetBoard() {
     playerScore = 0;
-    computerScore =0;
-    result.textContent = "Make your selection:";
+    computerScore = 0;
+    result.textContent = "Make your selection:\nFirst to five wins!";
+	winnerDeclaration.textContent = "";	
     playerCounter.textContent = "/";
     computerCounter.textContent = "/";
+	gameOver = false;	
 }
+
